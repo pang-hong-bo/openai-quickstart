@@ -1,4 +1,4 @@
 1. 可以使用这样的格式来快速调试
 client = OpenAI(api_key="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")
 
-2. windows 设置环境变量必须在cmd环境下 set OPENAI_API_KEY=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
+2. windows 设置环境变量必须在cmd环境下 set OPENAI_API_KEY=your-key
