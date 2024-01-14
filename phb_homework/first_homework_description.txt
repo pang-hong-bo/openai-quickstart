@@ -1,0 +1,6 @@
+支持图形用户界面（GUI），提升易用性。
+
+
+cd openai-quickstart\phb_homework\openai-translator
+python .\ai_translator\gradio_server.py
+访问 http://127.0.0.1:7860/
