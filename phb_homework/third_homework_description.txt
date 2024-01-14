@@ -1,0 +1,5 @@
+基于 ChatGLM2-6B 实现带图形化界面的 openai-translator
+
+
+cd openai-quickstart\phb_homework\openai-translator
+python .\ai_translator\gradio_server.py --model_name "chat_glm"
