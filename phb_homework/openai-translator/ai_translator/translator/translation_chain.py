@@ -16,6 +16,7 @@ class TranslationChain:
         # 翻译任务指令始终由 System 角色承担
         template = (
             """You are a translation expert, proficient in various languages. \n
+            Please use style: '{translation_style}'. \n
             Translates {source_language} to {target_language}."""
         )
         system_message_prompt = SystemMessagePromptTemplate.from_template(template)
@@ -40,13 +41,14 @@ class TranslationChain:
 
         self.chain = LLMChain(llm=chat, prompt=chat_prompt_template, verbose=verbose)
 
-    def run(self, text: str, source_language: str, target_language: str) -> (str, bool):
+    def run(self, text: str, source_language: str, target_language: str, translation_style: str) -> (str, bool):
         result = ""
         try:
             result = self.chain.run({
                 "text": text,
                 "source_language": source_language,
                 "target_language": target_language,
+                "translation_style": translation_style,
             })
         except Exception as e:
             LOG.error(f"An error occurred during translation: {e}")

@@ -14,13 +14,15 @@ class Writer:
     def __init__(self):
         pass
 
-    def save_translated_book(self, book: Book, ouput_file_format: str):
+    def save_translated_book(self, book: Book, ouput_file_format: str, translation_style: str):
         LOG.debug(ouput_file_format)
 
         if ouput_file_format.lower() == "pdf":
-            output_file_path = self._save_translated_book_pdf(book)
+            file_suffix = f'_translated_{translation_style}.pdf'
+            output_file_path = self._save_translated_book_pdf(book, file_suffix)
         elif ouput_file_format.lower() == "markdown":
-            output_file_path = self._save_translated_book_markdown(book)
+            file_suffix = f'_translated_{translation_style}.md'
+            output_file_path = self._save_translated_book_markdown(book, file_suffix)
         else:
             LOG.error(f"不支持文件类型: {ouput_file_format}")
             return ""
