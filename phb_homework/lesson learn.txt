@@ -1,4 +1,28 @@
 1. 可以使用这样的格式来快速调试
-client = OpenAI(api_key="your-key")
+client = OpenAI(api_key="xxx")
 
-2. windows 设置环境变量必须在cmd环境下 set OPENAI_API_KEY=your-key
+2. windows 设置环境变量必须在cmd环境下 set OPENAI_API_KEY=xxx
+
+3. python中实现
+import os
+os.getenv("OPENAI_API_KEY")
+os.environ['OPENAI_API_KEY'] = "xxx"
+os.getenv("OPENAI_API_KEY")
+
+4. 向量数据库  from langchain.vectorstores import Chroma
+5. Embedding  from langchain_openai import OpenAIEmbeddings，这里是否需要tokens去实时转换
+
+6. 如果需要解决XTS问题，最好给一些 examples，参考在 langchain\jupyter\model_io\prompt.ipynb
+router_chain 的案例可以帮助区分问题种类
+transform_chain 可以帮助区分log
+如果是直接与LLM交互，核心是构造足够好的提示词
+
+7. ' 要构建一个聊天机器人，通常会使用自然语言处理技术中的文本分类、语义理解和语言生成等技术。文本分类可以帮助机器人识别用户输入的意图，语义理解可以帮助机器人理解用户的语言，而语言生成则可以帮助机器人生成自然流畅的回复。此外，还可以结合机器学习和深度学习等技术来提高机器人的性能。不过，具体要使用哪些技术还要根据具体的需求和场景来决定。'
+
+8. Elaticsearch 也支持 embedding 
+
+9. Tencent vector DB
+
+10. 看看Langchain 目前支持的loader格式
+
+11. 通过React的过程拆解，展示出来， 帮助人去思考拆解思路
