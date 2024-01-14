@@ -26,3 +26,11 @@ transform_chain 可以帮助区分log
 10. 看看Langchain 目前支持的loader格式
 
 11. 通过React的过程拆解，展示出来， 帮助人去思考拆解思路
+
+12. 第十二章的代码再仔细阅读一下 langchain\openai-translator
+[]以及Gradio、 Flask 的用法
+
+13. []第十三章重新看
+14. []第十四章重新看
+
+faiss.ai
